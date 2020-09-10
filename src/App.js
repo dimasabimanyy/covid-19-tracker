@@ -9,6 +9,7 @@ import {
 import InfoBox from "./InfoBox";
 import Map from "./Map";
 import Table from "./Table";
+import { sortData } from "./util";
 import "./App.css";
 
 function App() {
@@ -35,7 +36,8 @@ function App() {
             value: country.countryInfo.iso2,
           }));
 
-          setTableData(data);
+          const sortedData = sortData(data);
+          setTableData(sortedData);
           setCountries(countries);
         });
     };
@@ -98,9 +100,6 @@ function App() {
           />
         </div>
 
-        {/* Table */}
-        <Table countries={tableData} />
-
         {/* Graph */}
 
         {/* Map */}
@@ -111,6 +110,7 @@ function App() {
           <h3>Live Cases by Country</h3>
           {/* Table */}
           <h3>Worldwide New Cases</h3>
+          <Table countries={tableData} />
           {/* Graph */}
         </CardContent>
       </Card>
