@@ -3,7 +3,7 @@
   overflow: scroll;
   height: 400px;
   color: #6a5d5d;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 .table tr {
