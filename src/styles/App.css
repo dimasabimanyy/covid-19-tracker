@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --light-paragraph: #ffffff;
+  --dark-paragraph: #cccccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eff2f7;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2.3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+h4 {
+  font-size: 1.6rem;
+}
+h5 {
+  font-size: 1.3rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  color: var(--dark-paragraph);
+}
+
+/* Left Sidebar */
+
+.left-sidebar {
+  background: #0a0933;
+  width: 250px;
+  color: var(--light-paragraph);
+  padding: 2rem;
+  position: fixed;
+}
+
+.left-sidebar ul {
+  margin-top: 2rem;
+}
+
+.left-sidebar ul li {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* Right sidebar */
+
+.right-sidebar {
+  width: 100%;
+  height: 100vh;
+  background: #eff2f7;
+  padding-left: 250px;
+}
+
+.top-white {
+  width: 100%;
+  height: 50px;
+  background: #fff;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem 3rem;
+  gap: 2rem;
+}
+
+/* Line graph */
+
+.line-graph {
+  height: 310px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.app-graph {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+/* Infobox Stats */
+
+.app-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.infoBox {
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.infoBox:hover {
+  transform: translateY(-5px);
+}
+
+.infoBox h6 {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.infoBox h3 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoBox-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoBox-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Map */
+
+.map-wrapper {
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 2rem;
+  padding-bottom: 5rem;
+}
+
+.map {
+  height: 400px;
+  background: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.map .leaflet-container {
+  height: 100%;
+}
+
+.info-flag img {
+  width: 80px;
+  border-radius: 5px;
+}
+
+.info-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #555;
+  margin-top: 5px;
+}
+
+.info-flag {
+  height: 80px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.info-cases,
+.info-recovered,
+.info-deaths {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.info-container {
+  width: 150px;
+}
+
+/* .app {
+  display: flex;
+  width: 1250px;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.app_dropdown {
+  background: #fff;
+  color: #fff;
+}
+
+.app_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.app_header > h1 {
+  color: #fc3c3c;
+  font-size: 2rem;
+}
+
+.app_left {
+  flex: 0.9;
+}
+
+.app_stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app_right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.app_graph {
+  flex-grow: 1;
+}
+
+.graph_title {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
+} */

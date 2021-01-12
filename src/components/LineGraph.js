@@ -24,6 +24,9 @@ const options = {
   scales: {
     xAxes: [
       {
+        gridLines: {
+          display: false,
+        },
         type: "time",
         time: {
           format: "MM/DD/YY",
@@ -68,7 +71,7 @@ function LineGraph({ casesType = "cases", ...props }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
+      await fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=150")
         .then((response) => {
           return response.json();
         })
@@ -90,9 +93,10 @@ function LineGraph({ casesType = "cases", ...props }) {
           data={{
             datasets: [
               {
-                backgroundColor: "rgba(204, 16, 52, 0.5)",
-                borderColor: "#CC1034",
+                backgroundColor: "  rgba(80, 77, 247, 0.5)",
+                borderColor: "rgb(80, 77, 247)",
                 data: data,
+                hoverBackgroundColor: " rgb(58, 55, 247)",
               },
             ],
           }}

@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
-import {
-  MenuItem,
-  FormControl,
-  Select,
-  Card,
-  CardContent,
-} from "@material-ui/core";
-import InfoBox from "./InfoBox";
-import Map from "./Map";
-import Table from "./Table";
-import LineGraph from "./LineGraph";
-import { sortData, prettyPrintStat } from "./util";
-import "./App.css";
+// import {
+//   MenuItem,
+//   FormControl,
+//   Select,
+//   Card,
+//   CardContent,
+// } from "@material-ui/core";
+import InfoBox from "./components/InfoBox";
+import Map from "./components/Map";
+import Table from "./components/Table";
+import LineGraph from "./components/LineGraph";
+import CountryDetails from "./components/CountryDetails";
+import { sortData, prettyPrintStat } from "./components/util";
+import "./styles/App.css";
 import "leaflet/dist/leaflet.css";
 
 function App() {
@@ -75,7 +76,71 @@ function App() {
 
   return (
     <div className="app">
-      <div className="app_left">
+      {/* Left sidebar */}
+      <section className="left-sidebar">
+        <div className="logo">Covid Tracker</div>
+        <div className="affected-country">
+          <ul onChange={onCountryChange} value={country}>
+            {/* List all countries */}
+            {countries.map((country) => (
+              <li value={country.value}>{country.name}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      {/* Right sidebar */}
+      <section className="right-sidebar">
+        <div className="top-white"></div>
+        <div className="grid-2">
+          <div className="line-graph">
+            <LineGraph className="app-graph" casesType={casesType} />
+          </div>
+          <div className="app-stats">
+            <InfoBox
+              isRed
+              active={casesType === "cases"}
+              onClick={(e) => setCasesType("cases")}
+              title="Coronavirus Cases"
+              cases={prettyPrintStat(countryInfo.todayCases)}
+              total={prettyPrintStat(countryInfo.cases)}
+            />
+            <InfoBox
+              active={casesType === "recovered"}
+              onClick={(e) => setCasesType("recovered")}
+              title="Recovered"
+              cases={prettyPrintStat(countryInfo.todayRecovered)}
+              total={prettyPrintStat(countryInfo.recovered)}
+            />
+            <InfoBox
+              isRed
+              active={casesType === "deaths"}
+              onClick={(e) => setCasesType("deaths")}
+              title="Deaths"
+              cases={prettyPrintStat(countryInfo.todayDeaths)}
+              total={prettyPrintStat(countryInfo.deaths)}
+            />
+            <InfoBox
+              isRed
+              active={casesType === "deaths"}
+              onClick={(e) => setCasesType("deaths")}
+              title="Deaths"
+              cases={prettyPrintStat(countryInfo.todayDeaths)}
+              total={prettyPrintStat(countryInfo.deaths)}
+            />
+          </div>
+        </div>
+        <div className="map-wrapper">
+          <Map
+            casesType={casesType}
+            countries={mapCountries}
+            center={mapCenter}
+            zoom={mapZoom}
+          />
+          <CountryDetails />
+        </div>
+      </section>
+      {/* End left sidebar */}
+      {/* <div className="app_left">
         <div className="app_header">
           <h1>COVID-19 TRACKER</h1>
           <FormControl className="app_dropdown">
@@ -118,7 +183,6 @@ function App() {
           />
         </div>
 
-        {/* Map */}
         <Map
           casesType={casesType}
           countries={mapCountries}
@@ -129,13 +193,13 @@ function App() {
       <Card className="app_right">
         <CardContent>
           <h3>Live Cases by Country</h3>
-          {/* Table */}
+
           <Table countries={tableData} />
           <h3 className="graph_title">Worldwide New {casesType}</h3>
-          {/* Graph */}
+
           <LineGraph className="app_graph" casesType={casesType} />
         </CardContent>
-      </Card>
+      </Card> */}
     </div>
   );
 }
