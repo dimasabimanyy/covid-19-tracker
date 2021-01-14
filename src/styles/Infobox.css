@@ -1,18 +1,20 @@
 .infoBox--selected {
-  border-top: 5px solid greenyellow;
+  border-top: 5px solid;
 }
 
-.infoBox--red {
-  border-color: #cc1034;
+.infoBox--selected.isRed {
+  border-color: rgb(255, 59, 59) !important;
+}
+.infoBox--selected.isGreen {
+  border-color: rgb(60, 255, 77) !important;
+}
+.infoBox--selected.isBlue {
+  border-color: rgb(77, 46, 255) !important;
+}
+.infoBox--selected.isOrange {
+  border-color: rgb(255, 146, 44) !important;
 }
 
-.infoBox_cases--green {
-  color: lightgreen !important;
-}
-
-.infoBox_cases {
-  color: #cc1034;
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
+.infoBox:nth-child(4) {
+  cursor: default;
 }

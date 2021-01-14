@@ -2,20 +2,35 @@ import React from "react";
 import "../styles/Infobox.css";
 import { Card, CardContent, Typography } from "@material-ui/core";
 
-function InfoBox({ title, cases, isRed, active, total, ...props }) {
+function InfoBox({
+  title,
+  cases,
+  isRed,
+  isGreen,
+  isOrange,
+  isBlue,
+  active,
+  total,
+  icon,
+  ...props
+}) {
   return (
     <div
       onClick={props.onClick}
-      className={`infoBox ${active && "infoBox--selected"}`}
+      className={`infoBox ${active && "infoBox--selected"} ${
+        isRed ? "isRed" : isGreen ? "isGreen" : isBlue ? "isBlue" : "isOrange"
+      }`}
     >
       <div className="infoBox-top">
         <h6>{title}</h6>
-        <div className="infoBox-icon">IC</div>
+        <div className="infoBox-icon">
+          <img src={icon} alt={title} />
+        </div>
       </div>
-      <h3 className={`infoBox-cases ${!isRed && "infoBox-cases--green"}`}>
-        {cases}
+      <h3>
+        {cases} <span>Today</span>
       </h3>
-      <h6>{total} Total</h6>
+      <h6>{total ? `Total : ${total}` : ""}</h6>
     </div>
     // <Card
     //   onClick={props.onClick}

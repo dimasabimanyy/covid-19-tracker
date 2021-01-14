@@ -14,22 +14,23 @@
 body {
   background: #eff2f7;
   font-family: "Poppins", sans-serif;
+  color: #36393b;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.1rem;
 }
 h2 {
-  font-size: 2.3rem;
+  font-size: 1.9rem;
 }
 h3 {
-  font-size: 2rem;
-}
-h4 {
   font-size: 1.6rem;
 }
+h4 {
+  font-size: 1.4rem;
+}
 h5 {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 h6 {
   font-size: 1rem;
@@ -43,14 +44,31 @@ p {
   color: var(--dark-paragraph);
 }
 
+/* Topbar */
+
+.topbar {
+  padding: 1rem 2rem;
+  background: #545cd8;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+}
+
 /* Left Sidebar */
 
 .left-sidebar {
-  background: #0a0933;
-  width: 250px;
+  background: #252b41;
+  min-height: 100vh;
   color: var(--light-paragraph);
   padding: 2rem;
-  position: fixed;
 }
 
 .left-sidebar ul {
@@ -62,19 +80,48 @@ p {
   font-size: 0.9rem;
 }
 
+.world-logo {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.world-logo img {
+  width: 80px;
+}
+
+.world-data-details {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.3rem;
+  cursor: default;
+}
+
+.world-data-details i {
+  font-size: 1.5rem;
+}
+
+.world-data-details p {
+  font-weight: 500;
+  color: #ececec;
+}
+
+.world-data-details span {
+  color: #ececec;
+}
+
 /* Right sidebar */
 
 .right-sidebar {
   width: 100%;
   height: 100vh;
   background: #eff2f7;
-  padding-left: 250px;
 }
 
-.top-white {
+.top-right-sidebar {
   width: 100%;
-  height: 50px;
-  background: #fff;
+  height: 200px;
+  background: #545cd8;
 }
 
 .grid-2 {
@@ -82,6 +129,7 @@ p {
   grid-template-columns: 1fr 1fr;
   padding: 2rem 3rem;
   gap: 2rem;
+  margin-top: -100px;
 }
 
 /* Line graph */
@@ -115,6 +163,9 @@ p {
   padding: 1rem;
   cursor: pointer;
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .infoBox:hover {
@@ -126,11 +177,6 @@ p {
   font-size: 0.95rem;
 }
 
-.infoBox h3 {
-  font-size: 1.7rem;
-  margin-bottom: 0.5rem;
-}
-
 .infoBox-top {
   display: flex;
   justify-content: space-between;
@@ -140,11 +186,24 @@ p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #2b2b2b;
+  background: #545cd8;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
+}
+
+.infoBox-icon img {
+  width: 70%;
+}
+
+.infoBox h3 {
+  font-size: 1.4rem;
+}
+
+.infoBox h3 span {
+  font-size: 13px;
+  font-weight: 500;
 }
 
 /* Map */
@@ -196,6 +255,14 @@ p {
 
 .info-container {
   width: 150px;
+}
+
+/* Country Details */
+
+.country-details {
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
 }
 
 /* .app {

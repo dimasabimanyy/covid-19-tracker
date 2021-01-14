@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
-// import {
-//   MenuItem,
-//   FormControl,
-//   Select,
-//   Card,
-//   CardContent,
-// } from "@material-ui/core";
+import {
+  MenuItem,
+  FormControl,
+  Select,
+  Card,
+  CardContent,
+} from "@material-ui/core";
 import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
 import Table from "./components/Table";
 import LineGraph from "./components/LineGraph";
 import CountryDetails from "./components/CountryDetails";
+import Topbar from "./components/Topbar";
 import { sortData, prettyPrintStat } from "./components/util";
 import "./styles/App.css";
 import "leaflet/dist/leaflet.css";
+import WorldData from "./components/WorldData";
+
+import casesLogo from "./images/Group.svg";
+import recoveredLogo from "./images/Group-1.svg";
+import deathsLogo from "./images/Group-2.svg";
+import populationLogo from "./images/Group-3.svg";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -51,7 +58,7 @@ function App() {
     };
 
     getCountriesData();
-  }, [countries]);
+  }, []);
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
@@ -76,70 +83,95 @@ function App() {
 
   return (
     <div className="app">
-      {/* Left sidebar */}
-      <section className="left-sidebar">
-        <div className="logo">Covid Tracker</div>
+      <Topbar />
+      <main>
+        {/* Left sidebar */}
+        <section className="left-sidebar">
+          <WorldData />
+          {/* <div className="logo">Covid Tracker</div>
         <div className="affected-country">
-          <ul onChange={onCountryChange} value={country}>
-            {/* List all countries */}
-            {countries.map((country) => (
-              <li value={country.value}>{country.name}</li>
+          <ul onClick={onCountryChange} value={country}>
+            {countries.map((country, index) => (
+              <li value={country.value} key={index}>
+                {country.name}
+              </li>
             ))}
           </ul>
-        </div>
-      </section>
-      {/* Right sidebar */}
-      <section className="right-sidebar">
-        <div className="top-white"></div>
-        <div className="grid-2">
-          <div className="line-graph">
-            <LineGraph className="app-graph" casesType={casesType} />
+        </div> */}
+        </section>
+        {/* End left sidebar */}
+        {/* Right sidebar */}
+        <section className="right-sidebar">
+          <div className="top-right-sidebar"></div>
+          <div className="grid-2">
+            <div className="line-graph">
+              <LineGraph className="app-graph" casesType={casesType} />
+            </div>
+
+            <div className="app-stats">
+              <InfoBox
+                icon={casesLogo}
+                isRed
+                active={casesType === "cases"}
+                onClick={(e) => setCasesType("cases")}
+                title="Coronavirus Cases"
+                cases={prettyPrintStat(countryInfo.todayCases)}
+                total={prettyPrintStat(countryInfo.cases)}
+              />
+              <InfoBox
+                icon={recoveredLogo}
+                isGreen
+                active={casesType === "recovered"}
+                onClick={(e) => setCasesType("recovered")}
+                title="Recovered"
+                cases={prettyPrintStat(countryInfo.todayRecovered)}
+                total={prettyPrintStat(countryInfo.recovered)}
+              />
+              <InfoBox
+                icon={deathsLogo}
+                isOrange
+                active={casesType === "deaths"}
+                onClick={(e) => setCasesType("deaths")}
+                title="Deaths"
+                cases={prettyPrintStat(countryInfo.todayDeaths)}
+                total={prettyPrintStat(countryInfo.deaths)}
+              />
+              <InfoBox
+                icon={populationLogo}
+                isBlue
+                active={casesType === "population"}
+                // onClick={(e) => setCasesType("population")}
+                title="Population"
+                cases={prettyPrintStat(countryInfo.population)}
+              />
+            </div>
           </div>
-          <div className="app-stats">
-            <InfoBox
-              isRed
-              active={casesType === "cases"}
-              onClick={(e) => setCasesType("cases")}
-              title="Coronavirus Cases"
-              cases={prettyPrintStat(countryInfo.todayCases)}
-              total={prettyPrintStat(countryInfo.cases)}
+          <div className="map-wrapper">
+            <Map
+              casesType={casesType}
+              countries={mapCountries}
+              center={mapCenter}
+              zoom={mapZoom}
             />
-            <InfoBox
-              active={casesType === "recovered"}
-              onClick={(e) => setCasesType("recovered")}
-              title="Recovered"
-              cases={prettyPrintStat(countryInfo.todayRecovered)}
-              total={prettyPrintStat(countryInfo.recovered)}
-            />
-            <InfoBox
-              isRed
-              active={casesType === "deaths"}
-              onClick={(e) => setCasesType("deaths")}
-              title="Deaths"
-              cases={prettyPrintStat(countryInfo.todayDeaths)}
-              total={prettyPrintStat(countryInfo.deaths)}
-            />
-            <InfoBox
-              isRed
-              active={casesType === "deaths"}
-              onClick={(e) => setCasesType("deaths")}
-              title="Deaths"
-              cases={prettyPrintStat(countryInfo.todayDeaths)}
-              total={prettyPrintStat(countryInfo.deaths)}
-            />
+            <CountryDetails country={countryInfo} />
           </div>
-        </div>
-        <div className="map-wrapper">
-          <Map
-            casesType={casesType}
-            countries={mapCountries}
-            center={mapCenter}
-            zoom={mapZoom}
-          />
-          <CountryDetails />
-        </div>
-      </section>
-      {/* End left sidebar */}
+          <FormControl className="app_dropdown">
+            <Select
+              variant="outlined"
+              onChange={onCountryChange}
+              value={country}
+            >
+              <MenuItem value="worldwide">Worldwide</MenuItem>
+              {countries.map((country, index) => (
+                <MenuItem value={country.value} key={index}>
+                  {country.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </section>
+      </main>
+
       {/* <div className="app_left">
         <div className="app_header">
           <h1>COVID-19 TRACKER</h1>
