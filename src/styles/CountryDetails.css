@@ -1,0 +1,34 @@
+.country-details {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.country-details-control {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+}
+
+.cd-last {
+  margin-bottom: 1.5rem;
+}
+
+.country-details-control span {
+  font-size: 1rem;
+}
+
+.country-details-control span:nth-child(1) {
+  font-weight: 500;
+}
+
+.country-details-flag {
+  width: 100%;
+  height: 190px;
+  margin-bottom: 1.4rem;
+}
+
+.country-details-flag img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

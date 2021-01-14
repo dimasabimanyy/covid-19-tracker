@@ -4,16 +4,16 @@ import numeral from "numeral";
 
 const casesTypeColors = {
   cases: {
-    hex: "#cc1034",
-    multiplier: 800,
+    hex: "#ff4343",
+    multiplier: 300,
   },
   recovered: {
-    hex: "#7dd71d",
-    multiplier: 1200,
+    hex: "#8bf336",
+    multiplier: 300,
   },
   deaths: {
-    hex: "#fb4443",
-    multiplier: 2000,
+    hex: "#ff9853",
+    multiplier: 300,
   },
 };
 

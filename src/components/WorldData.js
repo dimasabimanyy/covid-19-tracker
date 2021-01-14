@@ -13,8 +13,6 @@ const WorldData = () => {
       });
   }, []);
 
-  console.log(worldData);
-
   const {
     affectedCountries,
     population,
@@ -22,13 +20,11 @@ const WorldData = () => {
     casesPerOneMillion,
     critical,
     active,
-    activePerOneMillion,
     deaths,
     deathsPerOneMillion,
     recovered,
     recoveredPerOneMillion,
     tests,
-    testsPerOneMillion,
     todayCase,
     todayRecovered,
     todayDeaths,
@@ -63,7 +59,16 @@ const WorldData = () => {
             <i className="fab fa-angular"></i>
           </div>
           <div>
-            <p>Cases</p>
+            <p>Today Cases</p>
+            <span>{numeral(todayCase).format("0,0")}</span>
+          </div>
+        </div>
+        <div className="world-data-details">
+          <div>
+            <i className="fab fa-angular"></i>
+          </div>
+          <div>
+            <p>Total Cases</p>
             <span>{numeral(cases).format("0,0")}</span>
           </div>
         </div>
@@ -73,7 +78,7 @@ const WorldData = () => {
           </div>
           <div>
             <p>Cases / One Million</p>
-            <span>{casesPerOneMillion}</span>
+            <span>{numeral(casesPerOneMillion).format("0,0")}</span>
           </div>
         </div>
         <div className="world-data-details">

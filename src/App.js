@@ -1,26 +1,21 @@
 import React, { useState, useEffect } from "react";
-import {
-  MenuItem,
-  FormControl,
-  Select,
-  Card,
-  CardContent,
-} from "@material-ui/core";
+import { MenuItem, FormControl, Select } from "@material-ui/core";
+import numeral from "numeral";
 import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
 import Table from "./components/Table";
 import LineGraph from "./components/LineGraph";
-import CountryDetails from "./components/CountryDetails";
 import Topbar from "./components/Topbar";
 import { sortData, prettyPrintStat } from "./components/util";
 import "./styles/App.css";
+import "./styles/CountryDetails.css";
 import "leaflet/dist/leaflet.css";
 import WorldData from "./components/WorldData";
-
 import casesLogo from "./images/Group.svg";
 import recoveredLogo from "./images/Group-1.svg";
 import deathsLogo from "./images/Group-2.svg";
 import populationLogo from "./images/Group-3.svg";
+import defaultFlag from "./images/question-mark.jpg";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -77,8 +72,6 @@ function App() {
         setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
         setMapZoom(4);
       });
-
-    //https://disease.sh/v3/covid-19/countries/
   };
 
   return (
@@ -88,18 +81,8 @@ function App() {
         {/* Left sidebar */}
         <section className="left-sidebar">
           <WorldData />
-          {/* <div className="logo">Covid Tracker</div>
-        <div className="affected-country">
-          <ul onClick={onCountryChange} value={country}>
-            {countries.map((country, index) => (
-              <li value={country.value} key={index}>
-                {country.name}
-              </li>
-            ))}
-          </ul>
-        </div> */}
         </section>
-        {/* End left sidebar */}
+
         {/* Right sidebar */}
         <section className="right-sidebar">
           <div className="top-right-sidebar"></div>
@@ -140,7 +123,6 @@ function App() {
                 icon={populationLogo}
                 isBlue
                 active={casesType === "population"}
-                // onClick={(e) => setCasesType("population")}
                 title="Population"
                 cases={prettyPrintStat(countryInfo.population)}
               />
@@ -153,22 +135,75 @@ function App() {
               center={mapCenter}
               zoom={mapZoom}
             />
-            <CountryDetails country={countryInfo} />
+            <section className="country-details">
+              <div className="country-details-flag">
+                <img
+                  src={
+                    countryInfo.countryInfo
+                      ? countryInfo.countryInfo.flag
+                      : defaultFlag
+                  }
+                  alt="Flag"
+                />
+              </div>
+              <div className="country-details-control">
+                <span>Country : </span>
+                <span>{countryInfo.country ? countryInfo.country : "-"}</span>
+              </div>
+              <div className="country-details-control">
+                <span>Active : </span>
+                <span>
+                  {countryInfo.active
+                    ? numeral(countryInfo.active).format("0,0")
+                    : "-"}
+                </span>
+              </div>
+              <div className="country-details-control">
+                <span>Continent : </span>
+                <span>
+                  {countryInfo.continent ? countryInfo.continent : "-"}
+                </span>
+              </div>
+              <div className="country-details-control">
+                <span>Critical : </span>
+                <span>
+                  {countryInfo.critical
+                    ? numeral(countryInfo.critical).format("0,0")
+                    : "-"}
+                </span>
+              </div>
+              <div className="country-details-control">
+                <span>Tests : </span>
+                <span>
+                  {countryInfo.tests
+                    ? numeral(countryInfo.tests).format("0,0")
+                    : "-"}
+                </span>
+              </div>
+              <div className="country-details-control cd-last">
+                <span>Population : </span>
+                <span>
+                  {countryInfo.population
+                    ? numeral(countryInfo.population).format("0,0")
+                    : "-"}
+                </span>
+              </div>
+              <FormControl className="app_dropdown">
+                <Select
+                  variant="outlined"
+                  onChange={onCountryChange}
+                  value={country}
+                >
+                  <MenuItem value="worldwide">Choose Country</MenuItem>
+                  {countries.map((country, index) => (
+                    <MenuItem value={country.value} key={index}>
+                      {country.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </section>
           </div>
-          <FormControl className="app_dropdown">
-            <Select
-              variant="outlined"
-              onChange={onCountryChange}
-              value={country}
-            >
-              <MenuItem value="worldwide">Worldwide</MenuItem>
-              {countries.map((country, index) => (
-                <MenuItem value={country.value} key={index}>
-                  {country.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
         </section>
       </main>
 
