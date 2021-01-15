@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import numeral from "numeral";
-
 const options = {
   legend: {
     display: false,
+    labels: {
+      fontColor: "#fff",
+    },
   },
   elements: {
     point: {
@@ -24,6 +26,10 @@ const options = {
   scales: {
     xAxes: [
       {
+        ticks: {
+          fontColor: "#76819e",
+          maxTicksLimit: "20",
+        },
         gridLines: {
           display: false,
         },
@@ -37,9 +43,10 @@ const options = {
     yAxes: [
       {
         gridLines: {
-          display: false,
+          display: true,
         },
         ticks: {
+          fontColor: "#76819e",
           // Include a dollar sign in the ticks
           callback: function (value, index, values) {
             return numeral(value).format("0a");
@@ -85,22 +92,26 @@ function LineGraph({ casesType = "cases", ...props }) {
   }, [casesType]);
 
   return (
-    <div className={props.className}>
-      {data?.length > 0 && (
-        <Line
-          data={{
-            datasets: [
-              {
-                backgroundColor: "rgba(80, 77, 247, 0.5)",
-                borderColor: "rgb(80, 77, 247)",
-                data: data,
-                hoverBackgroundColor: " rgb(58, 55, 247)",
-              },
-            ],
-          }}
-          options={options}
-        />
-      )}
+    <div className="line-graph">
+      <h4 className="line-graph-title">Cases for the last 150 days</h4>
+      <div className={props.className}>
+        {data?.length > 0 && (
+          <Line
+            data={{
+              datasets: [
+                {
+                  backgroundColor: "hsl(231, 71%, 63%, 0.5)",
+                  borderColor: "#5E72E4",
+                  data: data,
+                  hoverBackgroundColor: "#fff",
+                  color: "#fff",
+                },
+              ],
+            }}
+            options={options}
+          />
+        )}
+      </div>
     </div>
   );
 }

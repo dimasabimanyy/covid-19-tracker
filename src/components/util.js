@@ -8,7 +8,7 @@ const casesTypeColors = {
     multiplier: 300,
   },
   recovered: {
-    hex: "#8bf336",
+    hex: "#27D28B",
     multiplier: 300,
   },
   deaths: {
@@ -24,7 +24,7 @@ export const sortData = (data) => {
 };
 
 export const prettyPrintStat = (stat) =>
-  stat ? `+${numeral(stat).format("0.0a")}` : "+0";
+  stat ? `${numeral(stat).format("0.0a")}` : "+0";
 
 // draw circlescountry on the map with interactive tooltop
 export const showDataOnMap = (data, casesType = "cases") =>

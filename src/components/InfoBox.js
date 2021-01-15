@@ -21,14 +21,14 @@ function InfoBox({
       }`}
     >
       <div className="infoBox-top">
-        <h6>{title}</h6>
+        <div className="infoBox-title">
+          <h6>{title}</h6>
+          <h3>+{cases}</h3>
+        </div>
         <div className="infoBox-icon">
           <img src={icon} alt={title} />
         </div>
       </div>
-      <h3>
-        {cases} <span>Today</span>
-      </h3>
       <h6>{total ? `Total : ${total}` : ""}</h6>
     </div>
     // <Card
