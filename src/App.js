@@ -208,67 +208,6 @@ function App() {
           </div>
         </section>
       </main>
-
-      {/* <div className="app_left">
-        <div className="app_header">
-          <h1>COVID-19 TRACKER</h1>
-          <FormControl className="app_dropdown">
-            <Select
-              variant="outlined"
-              onChange={onCountryChange}
-              value={country}
-            >
-              <MenuItem value="worldwide">Worldwide</MenuItem>
-              {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </div>
-
-        <div className="app_stats">
-          <InfoBox
-            isRed
-            active={casesType === "cases"}
-            onClick={(e) => setCasesType("cases")}
-            title="Coronavirus Cases"
-            cases={prettyPrintStat(countryInfo.todayCases)}
-            total={prettyPrintStat(countryInfo.cases)}
-          />
-          <InfoBox
-            active={casesType === "recovered"}
-            onClick={(e) => setCasesType("recovered")}
-            title="Recovered"
-            cases={prettyPrintStat(countryInfo.todayRecovered)}
-            total={prettyPrintStat(countryInfo.recovered)}
-          />
-          <InfoBox
-            isRed
-            active={casesType === "deaths"}
-            onClick={(e) => setCasesType("deaths")}
-            title="Deaths"
-            cases={prettyPrintStat(countryInfo.todayDeaths)}
-            total={prettyPrintStat(countryInfo.deaths)}
-          />
-        </div>
-
-        <Map
-          casesType={casesType}
-          countries={mapCountries}
-          center={mapCenter}
-          zoom={mapZoom}
-        />
-      </div>
-      <Card className="app_right">
-        <CardContent>
-          <h3>Live Cases by Country</h3>
-
-          <Table countries={tableData} />
-          <h3 className="graph_title">Worldwide New {casesType}</h3>
-
-          <LineGraph className="app_graph" casesType={casesType} />
-        </CardContent>
-      </Card> */}
     </div>
   );
 }

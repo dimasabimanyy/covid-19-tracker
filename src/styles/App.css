@@ -94,6 +94,8 @@ main {
   font-size: 0.9rem;
 }
 
+/* World data (left sidebar) */
+
 .world-logo {
   text-align: center;
   margin-bottom: 1.6rem;
@@ -320,10 +322,63 @@ main {
 
 /* Donate Banner */
 
-.donate-banner {
+.donate {
   width: 32%;
-  height: 200px;
-  background: #fff;
+  background: #000c3a;
+  color: #fff;
+  height: 370px;
   border-radius: 5px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.donate-thumbnail {
+  width: 100%;
+  height: 175px;
+}
+
+.donate-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.donate-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.donate h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.donate h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.7rem;
+}
+
+.donate-btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-donate {
+  background: #fff;
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 1.3rem;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.btn-donate:hover {
+  transform: translateY(-5px);
 }
