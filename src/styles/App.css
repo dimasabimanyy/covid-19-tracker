@@ -12,9 +12,24 @@
 }
 
 body {
-  background: #eff2f7;
   font-family: "Poppins", sans-serif;
   color: #36393b;
+  position: relative;
+  background: url("../images/nature.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+body:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000c3a;
+  opacity: 0.8;
+  z-index: -1;
 }
 
 h1 {
@@ -65,7 +80,6 @@ main {
 /* Left Sidebar */
 
 .left-sidebar {
-  background: #252b41;
   min-height: 100% !important;
   color: var(--light-paragraph);
   padding: 2rem;
@@ -122,7 +136,7 @@ main {
 
 .right-sidebar {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   background: #eff2f7;
 }
 
@@ -193,6 +207,7 @@ main {
   justify-content: center;
   align-items: center;
   color: #fff;
+  margin-left: 0.5rem;
 }
 
 .infoBox-icon img {
@@ -258,35 +273,48 @@ main {
   background: #fff;
   padding: 2rem;
   margin-top: -7.5rem;
+  border-radius: 5px;
 }
 
 .table-wrapper h5 {
+  font-size: 1.3rem;
   margin-bottom: 1.5rem;
 }
 
-.table {
+.table-country {
   width: 100%;
   background: #fff;
   overflow: scroll;
-  height: 450px;
+  height: 450px !important;
   overflow-x: hidden;
   text-align: left;
-  padding-right: 1rem;
 }
 
-.table tr {
-  display: flex;
+.table-country tr {
+  display: grid;
+  grid-template-columns: 1fr 20% 20% 20%;
+  align-items: center;
+  padding: 0.5rem 0;
   justify-content: space-between;
-  padding: 0.5rem;
+  text-align: left;
 }
 
-.table tr:nth-of-type(odd) {
-  /* background: #f3f2f8; */
+.tr-1 {
+  margin-bottom: 0.5rem;
+}
+
+.table-country tr td {
+  color: #414141;
+  font-weight: 600;
+}
+
+.table-country-flag {
+  display: flex;
+  align-items: center;
 }
 
 .table-country img {
   width: 40px;
-  object-fit: cover;
   margin-right: 1rem;
 }
 

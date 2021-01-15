@@ -6,16 +6,22 @@ function Table({ countries }) {
   return (
     <div className="table-wrapper">
       <h5>View cases by country</h5>
-      <div className="table">
+      <div className="table-country">
+        <tr className="tr-1">
+          <th>Country</th>
+          <th>Cases</th>
+          <th>Recovered</th>
+          <th>Deaths</th>
+        </tr>
         {countries.map((country, index) => (
-          <tr key={index} className="table-country">
-            <td>
+          <tr key={index}>
+            <td className="table-country-flag">
               <img src={country.countryInfo.flag} alt={country.country} />{" "}
               {country.country}
             </td>
-            <td>
-              <strong>{numeral(country.cases).format("0,0")}</strong>
-            </td>
+            <td>{numeral(country.cases).format("0,0")}</td>
+            <td>{numeral(country.cases).format("0,0")}</td>
+            <td>{numeral(country.cases).format("0,0")}</td>
           </tr>
         ))}
       </div>
