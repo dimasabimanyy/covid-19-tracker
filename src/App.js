@@ -16,6 +16,7 @@ import recoveredLogo from "./images/Group-1.svg";
 import deathsLogo from "./images/Group-2.svg";
 import populationLogo from "./images/Group-3.svg";
 import defaultFlag from "./images/question-mark.jpg";
+import DonateBanner from "./components/DonateBanner";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -86,7 +87,7 @@ function App() {
         {/* Right sidebar */}
         <section className="right-sidebar">
           <div className="top-right-sidebar"></div>
-          <div className="grid-2">
+          <div className="main-content">
             <div className="line-graph">
               <LineGraph className="app-graph" casesType={casesType} />
             </div>
@@ -127,15 +128,14 @@ function App() {
                 cases={prettyPrintStat(countryInfo.population)}
               />
             </div>
-          </div>
-          <div className="map-wrapper">
+
             <Map
               casesType={casesType}
               countries={mapCountries}
               center={mapCenter}
               zoom={mapZoom}
             />
-            <section className="country-details">
+            <div className="country-details">
               <div className="country-details-flag">
                 <img
                   src={
@@ -202,7 +202,9 @@ function App() {
                   ))}
                 </Select>
               </FormControl>
-            </section>
+            </div>
+            <Table countries={tableData} />
+            <DonateBanner />
           </div>
         </section>
       </main>

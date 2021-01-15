@@ -1,6 +1,11 @@
 .country-details {
+  width: 32% !important;
   text-align: center;
   padding: 1.5rem;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
 }
 
 .country-details-control {
