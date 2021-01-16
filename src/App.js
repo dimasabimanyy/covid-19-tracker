@@ -85,7 +85,9 @@ function App() {
 
         {/* Right sidebar */}
         <section className="right-sidebar">
-          <div className="top-right-sidebar"></div>
+          <div className="top-right-sidebar">
+            <h6 className="main-title">Covid Tracker</h6>
+          </div>
 
           <div className="main-content">
             <div className="app-stats">

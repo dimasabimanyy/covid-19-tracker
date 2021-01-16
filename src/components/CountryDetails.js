@@ -55,16 +55,24 @@ const CountryDetails = ({
             : "-"}
         </span>
       </div>
-      <FormControl className="app_dropdown">
-        <Select variant="outlined" onChange={onCountryChange} value={country}>
-          <MenuItem value="worldwide">Choose Country</MenuItem>
+      <div className="app-dropdown">
+        <select
+          onChange={onCountryChange}
+          value={country}
+          className="select-country"
+        >
+          <option value="worldwide">Choose Country</option>
           {countries.map((country, index) => (
-            <MenuItem value={country.value} key={index}>
+            <option
+              value={country.value}
+              key={index}
+              className="select-country-option"
+            >
               {country.name}
-            </MenuItem>
+            </option>
           ))}
-        </Select>
-      </FormControl>
+        </select>
+      </div>
     </div>
   );
 };

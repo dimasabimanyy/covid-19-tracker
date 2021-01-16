@@ -44,6 +44,8 @@ const options = {
       {
         gridLines: {
           display: true,
+          color: "rgba(118, 129, 158, 0.4)",
+          drawBorder: false,
         },
         ticks: {
           fontColor: "#76819e",
@@ -93,7 +95,7 @@ function LineGraph({ casesType = "cases", ...props }) {
 
   return (
     <div className="line-graph">
-      <h4 className="line-graph-title">Cases for the last 150 days</h4>
+      <h4 className="line-graph-title">{casesType} for the last 150 days</h4>
       <div className={props.className}>
         {data?.length > 0 && (
           <Line
