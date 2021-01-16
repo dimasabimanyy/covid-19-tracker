@@ -3,7 +3,6 @@ import InfoBox from "./components/InfoBox";
 import Map from "./components/Map";
 import Table from "./components/Table";
 import LineGraph from "./components/LineGraph";
-import Topbar from "./components/Topbar";
 import WorldData from "./components/WorldData";
 import CountryDetails from "./components/CountryDetails";
 import { sortData, prettyPrintStat } from "./components/util";
@@ -16,6 +15,7 @@ import recoveredLogo from "./images/Group-1.svg";
 import deathsLogo from "./images/Group-2.svg";
 import populationLogo from "./images/Group-3.svg";
 import DonateBanner from "./components/DonateBanner";
+import Footer from "./components/Footer";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -76,7 +76,6 @@ function App() {
 
   return (
     <div className="app">
-      {/* <Topbar /> */}
       <main>
         {/* Left sidebar */}
         <section className="left-sidebar">
@@ -142,6 +141,7 @@ function App() {
             <Table countries={tableData} />
             <DonateBanner />
             <LineGraph className="app-graph" casesType={casesType} />
+            <Footer />
           </div>
         </section>
       </main>

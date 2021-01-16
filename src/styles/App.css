@@ -17,7 +17,7 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #36393b;
   position: relative;
-  background: url("../images/nature.jpg");
+  /* background: url("../images/nature.jpg"); */
   background-size: cover;
   background-position: center;
 }
@@ -85,7 +85,7 @@ main {
 .left-sidebar {
   min-height: 100% !important;
   color: var(--light-paragraph);
-  padding: 2rem 1rem;
+  padding: 2rem 1.5rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
@@ -119,8 +119,7 @@ main {
 }
 
 .world-data-details i {
-  font-size: 1.5rem;
-  color: #36393b;
+  font-size: 19px;
 }
 
 .world-data-details:nth-child(1) i {
@@ -185,19 +184,20 @@ main {
 
 /* Right sidebar */
 
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
-  column-gap: 2rem;
-  row-gap: 3rem;
-  margin-top: -17rem;
-}
-
 .right-sidebar {
   width: 100%;
   min-height: 100vh;
   background: #eff2f7;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2.5rem;
+  /* column-gap: 2rem;*/
+  row-gap: 3rem;
+  margin-top: -17rem;
 }
 
 .top-right-sidebar {
@@ -285,7 +285,7 @@ main {
 .infoBox h3 {
   color: #32325d;
   font-weight: 600;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .infoBox-top {
@@ -399,7 +399,7 @@ main {
   width: 64%;
   background: #fff;
   padding: 2rem;
-  margin-top: -7.5rem;
+  margin-top: -6.5rem;
   border-radius: 5px;
 }
 
@@ -523,4 +523,18 @@ main {
 
 .btn-donate:hover {
   transform: translateY(-5px);
+}
+
+/* Footer */
+
+footer {
+  font-size: 14px;
+  margin-top: 4rem;
+  color: #8898aa;
+}
+
+footer a {
+  color: #1290f0;
+  text-decoration: none;
+  font-weight: 600;
 }
