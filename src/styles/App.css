@@ -190,16 +190,6 @@ main {
   background: #eff2f7;
 }
 
-.main-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 2.5rem;
-  /* column-gap: 2rem;*/
-  row-gap: 3rem;
-  margin-top: -17rem;
-}
-
 .top-right-sidebar {
   width: 100%;
   height: 350px;
@@ -208,10 +198,22 @@ main {
     rgba(39, 210, 138, 1) 0%,
     rgba(45, 206, 203, 1) 100%
   );
-  padding: 2rem;
+  padding: 2.5rem;
   color: #fff;
 }
 
+.main-title {
+  margin-bottom: 5rem;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2.5rem;
+  row-gap: 3rem;
+  margin-top: -6rem;
+}
 .main-title {
   color: #fff;
   text-transform: uppercase;
@@ -252,7 +254,7 @@ main {
 .app-stats {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
 
@@ -415,7 +417,7 @@ main {
   width: 100%;
   background: #fff;
   overflow: scroll;
-  height: 450px !important;
+  height: 450px;
   overflow-x: hidden;
   text-align: left;
 }

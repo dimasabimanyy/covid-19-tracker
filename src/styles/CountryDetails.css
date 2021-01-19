@@ -1,9 +1,8 @@
 .country-details {
-  width: 32% !important;
+  width: 32%;
   text-align: center;
   padding: 1.5rem;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  width: 100%;
   background: #fff;
   border-radius: 5px;
 }
@@ -55,13 +54,14 @@
   font-weight: 600;
   border-radius: 5px;
   outline: none;
-  padding: 15px 12px;
+  padding: 12px;
   cursor: pointer;
-  background-position: right 15px top 50%;
+  background-position: right 10px top 50%;
   background-repeat: no-repeat;
   background-size: 10px;
   font-size: 13px;
   background-color: #5e72e4;
+  width: 150px;
 }
 
 .select-country option {

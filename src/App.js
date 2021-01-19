@@ -9,6 +9,7 @@ import { sortData, prettyPrintStat } from "./components/util";
 import numeral from "numeral";
 import "./styles/App.css";
 import "./styles/CountryDetails.css";
+import "./styles/Responsive.css";
 import "leaflet/dist/leaflet.css";
 import casesLogo from "./images/Group.svg";
 import recoveredLogo from "./images/Group-1.svg";
@@ -86,9 +87,6 @@ function App() {
         <section className="right-sidebar">
           <div className="top-right-sidebar">
             <h6 className="main-title">Covid Tracker</h6>
-          </div>
-
-          <div className="main-content">
             <div className="app-stats">
               <InfoBox
                 icon={casesLogo}
@@ -125,6 +123,9 @@ function App() {
                 cases={prettyPrintStat(countryInfo.population)}
               />
             </div>
+          </div>
+
+          <div className="main-content">
             <Map
               casesType={casesType}
               countries={mapCountries}
