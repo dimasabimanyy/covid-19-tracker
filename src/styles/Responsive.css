@@ -1,10 +1,80 @@
 /* Tablet Screen */
 @media screen and (max-width: 1100px) {
-  .main-content {
-    /* background: blue; */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+  }
+
+  .topbar-wrapper-logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar-logo {
+    width: 40px;
+    margin-right: 5px;
+  }
+
+  .topbar-logo img {
+    width: 100%;
+  }
+
+  .topbar-wrapper-logo h1 {
+    font-size: 20px;
+    letter-spacing: -2px;
+    color: rgba(39, 210, 138, 1);
+  }
+
+  .hamburger .line {
+    width: 33px;
+    height: 2px;
+    margin: 6px 0;
+    background: rgb(134, 134, 134);
   }
 
   .left-sidebar {
+    opacity: 0;
+    width: 90%;
+    position: absolute;
+    background: #fff;
+    top: 1.5rem;
+    left: 5%;
+    border-radius: 10px;
+    z-index: 9999;
+    height: fit-content;
+    pointer-events: none;
+    transition: 0.3s ease;
+  }
+
+  .modal-active {
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  .modal-close-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .modal-close-icon div {
+    margin: 5px 0;
+    width: 30px;
+    height: 2px;
+    background: rgb(121, 121, 121);
+  }
+
+  .modal-close-icon div:nth-child(odd) {
+    transform: rotate(45deg) translateY(7px) translateX(7px);
+  }
+
+  .modal-close-icon div:nth-child(even) {
+    transform: rotate(-45deg) translateY(1px) translateX(-2px);
+  }
+
+  .main-title {
     display: none;
   }
 

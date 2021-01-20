@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import numeral from "numeral";
 import worldLogo from "../images/world.svg";
 
-const WorldData = () => {
+const WorldData = ({ handleModal }) => {
   const [worldData, setWorldData] = useState({});
 
   useEffect(() => {
@@ -32,6 +32,10 @@ const WorldData = () => {
 
   return (
     <div className="world-data">
+      <div className="modal-close-icon" onClick={handleModal}>
+        <div></div>
+        <div></div>
+      </div>
       <div className="world-logo">
         <img src={worldLogo} alt="Worldwide" />
       </div>

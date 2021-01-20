@@ -17,6 +17,7 @@ import deathsLogo from "./images/Group-2.svg";
 import populationLogo from "./images/Group-3.svg";
 import DonateBanner from "./components/DonateBanner";
 import Footer from "./components/Footer";
+import Topbar from "./components/Topbar";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -27,6 +28,7 @@ function App() {
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCountries, setMapCountries] = useState([]);
   const [casesType, setCasesType] = useState("cases");
+  const [modal, setModal] = useState(false);
 
   useEffect(() => {
     fetch("https://disease.sh/v3/covid-19/all")
@@ -75,12 +77,21 @@ function App() {
       });
   };
 
+  const handleModal = () => {
+    if (modal === false) {
+      setModal(true);
+    } else {
+      setModal(false);
+    }
+  };
+
   return (
     <div className="app">
       <main>
+        <Topbar handleModal={handleModal} />
         {/* Left sidebar */}
-        <section className="left-sidebar">
-          <WorldData />
+        <section className={`left-sidebar ${modal ? "modal-active" : ""}`}>
+          <WorldData handleModal={handleModal} />
         </section>
 
         {/* Right sidebar */}

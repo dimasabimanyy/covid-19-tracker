@@ -62,13 +62,6 @@ p {
   color: var(--dark-paragraph);
 }
 
-/* Topbar */
-
-.topbar {
-  padding: 1rem 2rem;
-  background: #545cd8;
-}
-
 .logo {
   color: #fff;
   font-size: 1.2rem;
@@ -83,7 +76,7 @@ main {
 /* Left Sidebar */
 
 .left-sidebar {
-  min-height: 100% !important;
+  height: 100%;
   color: var(--light-paragraph);
   padding: 2rem 1.5rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -187,7 +180,7 @@ main {
 .right-sidebar {
   width: 100%;
   min-height: 100vh;
-  background: #eff2f7;
+  background: #f8f9fe;
 }
 
 .top-right-sidebar {
@@ -227,7 +220,9 @@ main {
   height: 360px;
   background: #172b4d;
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
 }
 
 .line-graph-title {
@@ -358,7 +353,8 @@ main {
   background: #fff;
   padding: 0.5rem;
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
 }
 
 .map .leaflet-container {
@@ -403,6 +399,8 @@ main {
   padding: 2rem;
   margin-top: -6.5rem;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
 }
 
 .table-wrapper h5 {
@@ -471,7 +469,8 @@ main {
   background: #fff;
   height: 370px;
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
 }
 
 .donate-thumbnail {
@@ -539,4 +538,9 @@ footer a {
   color: #1290f0;
   text-decoration: none;
   font-weight: 600;
+}
+
+/* Topbar */
+.topbar {
+  display: none;
 }
