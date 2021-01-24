@@ -27,11 +27,16 @@
     color: rgba(39, 210, 138, 1);
   }
 
+  .hamburger {
+    cursor: pointer;
+  }
+
   .hamburger .line {
     width: 33px;
     height: 2px;
     margin: 6px 0;
     background: rgb(134, 134, 134);
+    cursor: pointer;
   }
 
   .left-sidebar {
@@ -57,6 +62,7 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    cursor: pointer;
   }
 
   .modal-close-icon div {
