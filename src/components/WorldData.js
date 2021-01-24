@@ -42,7 +42,7 @@ const WorldData = ({ handleModal }) => {
       <div>
         <div className="world-data-details">
           <div>
-            <i class="fas fa-globe-europe"></i>
+            <i class="far fa-flag"></i>
           </div>
           <div>
             <p>Affected Countries</p>
@@ -87,7 +87,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="fas fa-head-side-mask"></i>
           </div>
           <div>
             <p>Active</p>
@@ -96,7 +96,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="fas fa-heartbeat"></i>
           </div>
           <div>
             <p>Critical</p>
@@ -132,7 +132,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="far fa-smile"></i>
           </div>
           <div>
             <p>Recovered / One Million</p>{" "}
@@ -141,7 +141,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="fas fa-lungs-virus"></i>
           </div>
           <div>
             <p>Today Deaths</p>
@@ -150,7 +150,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="fas fa-procedures"></i>
           </div>
           <div>
             <p>Total Deaths</p>
@@ -159,7 +159,7 @@ const WorldData = ({ handleModal }) => {
         </div>
         <div className="world-data-details">
           <div>
-            <i className="fab fa-angular"></i>
+            <i class="fas fa-file-medical-alt"></i>
           </div>
           <div>
             <p>Deaths / One Million</p>
