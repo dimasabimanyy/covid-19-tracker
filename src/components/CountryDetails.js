@@ -1,7 +1,6 @@
 import React from "react";
 import numeral from "numeral";
 import defaultFlag from "../images/question-mark.jpg";
-import { MenuItem, FormControl, Select } from "@material-ui/core";
 
 const CountryDetails = ({
   country,

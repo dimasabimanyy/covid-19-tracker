@@ -18,6 +18,7 @@ const DonateBanner = () => {
             target="_blank"
             alt="covid donate"
             className="btn btn-donate"
+            rel="noopener noreferrer"
           >
             Donate Now
           </a>

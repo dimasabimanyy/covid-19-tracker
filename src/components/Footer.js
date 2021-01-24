@@ -12,6 +12,7 @@ const Footer = () => {
         href="https://github.com/dimasabimanyy"
         alt="Dimas Abimanyu"
         target="_blank"
+        rel="noopener noreferrer"
       >
         Dimas Abimanyu
       </a>
