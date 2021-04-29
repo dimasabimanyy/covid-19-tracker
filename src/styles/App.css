@@ -104,10 +104,13 @@ main {
 
 .world-data-details {
   display: flex;
-  gap: 1rem;
   align-items: center;
   margin-bottom: 1.5rem;
   cursor: default;
+}
+
+.world-data-details div:nth-child(odd) {
+  margin-right: 1rem;
 }
 
 .world-data-details i {
@@ -209,7 +212,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 2.5rem;
-  /* row-gap: 3rem; */
   margin-top: -6rem;
 }
 
@@ -351,50 +353,6 @@ main {
 .infoBox h3 span {
   font-size: 13px;
   font-weight: 500;
-}
-
-.map {
-  width: 64%;
-  height: 400px;
-  background: #fff;
-  padding: 0.5rem;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
-    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
-}
-
-.map .leaflet-container {
-  height: 100%;
-}
-
-.info-flag img {
-  width: 80px;
-  border-radius: 5px;
-}
-
-.info-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #555;
-  margin-top: 5px;
-}
-
-.info-flag {
-  height: 80px;
-  width: 100%;
-  background-size: cover;
-  border-radius: 8px;
-}
-
-.info-cases,
-.info-recovered,
-.info-deaths {
-  font-size: 16px;
-  margin-top: 5px;
-}
-
-.info-container {
-  width: 150px;
 }
 
 /* Donate Banner */
