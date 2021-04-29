@@ -17,7 +17,6 @@ body {
   font-family: "Open Sans", sans-serif;
   color: #36393b;
   position: relative;
-  /* background: url("../images/nature.jpg"); */
   background-size: cover;
   background-position: center;
 }
@@ -195,6 +194,12 @@ main {
   color: #fff;
 }
 
+@media screen and (max-width: 900px) {
+  .top-right-sidebar {
+    padding: 1.5rem;
+  }
+}
+
 .main-title {
   margin-bottom: 5rem;
 }
@@ -204,9 +209,10 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 2.5rem;
-  row-gap: 3rem;
+  /* row-gap: 3rem; */
   margin-top: -6rem;
 }
+
 .main-title {
   color: #fff;
   text-transform: uppercase;
@@ -391,77 +397,6 @@ main {
   width: 150px;
 }
 
-/* Table */
-
-.table-wrapper {
-  width: 64%;
-  background: #fff;
-  padding: 2rem;
-  margin-top: -6.5rem;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
-    rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
-}
-
-.table-wrapper h5 {
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  margin-bottom: 1rem;
-  color: #32325d;
-}
-
-.table-country {
-  width: 100%;
-  background: #fff;
-  overflow: scroll;
-  height: 450px;
-  overflow-x: hidden;
-  text-align: left;
-}
-
-.table-country tr {
-  display: grid;
-  grid-template-columns: 1fr 20% 20% 20%;
-  align-items: center;
-  padding: 1rem 0.5rem;
-  justify-content: space-between;
-  text-align: left;
-  font-size: 14px;
-}
-
-.tr-1 {
-  background: #f6f9fc;
-}
-
-.table-country tr th {
-  color: #32325d !important;
-  font-weight: 600;
-}
-
-.table-country tr td {
-  color: #606266;
-  font-weight: 400;
-  font-size: 14px;
-}
-
-.table-country tr:hover {
-  background: #f6f9fc;
-}
-
-.table-country-flag {
-  display: flex;
-  align-items: center;
-  color: #606266 !important;
-  font-weight: 600 !important;
-  font-size: 13px !important;
-}
-
-.table-country img {
-  width: 35px;
-  margin-right: 1rem;
-}
-
 /* Donate Banner */
 
 .donate {
@@ -471,6 +406,7 @@ main {
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
     rgba(0, 0, 0, 0.02) 0px 1px 2px 0px;
+  margin-bottom: 3rem;
 }
 
 .donate-thumbnail {
